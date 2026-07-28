@@ -1,17 +1,16 @@
 // import styles from "./Form.module.css";
 import { useState } from "react";
-
-interface eventProps {}
+import type { ChangeEvent, SubmitEvent } from "react";
 
 function Form() {
   const [value, setValue] = useState("");
   const [error, setError] = useState(null);
 
-  function handleChange(event) {
-    setValue(event.tarvet.value);
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    setValue(event.target.value);
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     //! виклик API
     //! валідація ф.я
