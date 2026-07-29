@@ -2,10 +2,11 @@
 import { useState } from "react";
 import type { ChangeEvent, SubmitEvent } from "react";
 import validateVin from "../../utils/validation";
+// import Modal from "../Modal/Modal";
 
 function Form() {
   const [value, setValue] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);
@@ -13,9 +14,14 @@ function Form() {
 
   function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
+    const validationError = validateVin(value);
 
-    validateVin(value);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
 
+    setError(null);
     //! виклик API
   }
 
