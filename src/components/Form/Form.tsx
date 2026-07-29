@@ -1,6 +1,7 @@
 // import styles from "./Form.module.css";
 import { useState } from "react";
 import type { ChangeEvent, SubmitEvent } from "react";
+import validateVin from "../../utils/validation";
 
 function Form() {
   const [value, setValue] = useState("");
@@ -12,8 +13,10 @@ function Form() {
 
   function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    validateVin(value);
+
     //! виклик API
-    //! валідація ф.я
   }
 
   return (
