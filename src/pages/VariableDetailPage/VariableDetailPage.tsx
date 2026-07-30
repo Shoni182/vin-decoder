@@ -1,4 +1,4 @@
-import styles from "./VariableDetailPage.module.css";
+// import styles from "./VariableDetailPage.module.css";
 
 import { useParams } from "react-router";
 

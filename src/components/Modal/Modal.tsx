@@ -20,8 +20,13 @@ function Modal({ children, close }: ModalProps) {
         close();
       }
     };
-    document.removeEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "";
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
   }, [close]);
 
   return createPortal(

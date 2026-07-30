@@ -2,7 +2,7 @@
 import { useState } from "react";
 import type { ChangeEvent, SubmitEvent } from "react";
 import validateVin from "../../utils/validation";
-// import Modal from "../Modal/Modal";
+import Modal from "../Modal/Modal";
 
 function Form() {
   const [value, setValue] = useState("");
@@ -29,7 +29,8 @@ function Form() {
     <form onSubmit={handleSubmit}>
       <input value={value} onChange={handleChange} />
 
-      {error && <span>{error}</span>}
+      {/* {error && <span>{error}</span>} */}
+      {error && <Modal close={() => setError(null)}>{error}</Modal>}
       <button type="submit">Submit</button>
     </form>
   );

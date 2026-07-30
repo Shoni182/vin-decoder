@@ -1,4 +1,4 @@
-import styles from "./HomePage.module.css";
+// import styles from "./HomePage.module.css";
 import Form from "../../components/Form/Form";
 
 function HomePage() {
