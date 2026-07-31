@@ -1,4 +1,4 @@
-interface DecodeVinResult {
+export interface DecodeVinResult {
   Value: string | null;
   ValueId: string | null;
   Variable: string;

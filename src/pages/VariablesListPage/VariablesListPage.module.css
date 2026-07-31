@@ -1,3 +1,16 @@
-div {
-    color: #e09f49;
+.list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.item a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.item a:hover {
+    text-decoration: underline;
 }

@@ -1,12 +1,15 @@
 import { NavLink } from "react-router";
-// import styles from "./Navigation.module.css";
+import css from "./Navigation.module.css";
 
 function Navigation() {
   return (
-    <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/variables">Variables</NavLink>
-      <NavLink to="/variables/:variableId">Home</NavLink>
+    <nav className={css.nav}>
+      <NavLink className={css.link} to="/">
+        Home
+      </NavLink>
+      <NavLink className={css.link} to="/variables">
+        Variable List
+      </NavLink>
     </nav>
   );
 }
