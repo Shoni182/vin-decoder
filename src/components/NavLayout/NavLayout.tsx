@@ -6,7 +6,7 @@ function NavLayout() {
   return (
     <div className={css.layout}>
       <Navigation />
-      <main>
+      <main className={css.content}>
         <Outlet />
       </main>
     </div>

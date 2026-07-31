@@ -6,8 +6,8 @@
 
 .link {
     text-decoration: none;
-    color: #2563eb;
     padding: 0.25rem 0;
+    color: var(--accent);
 }
 
 .link:hover {

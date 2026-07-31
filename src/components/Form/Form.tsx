@@ -17,13 +17,11 @@ function Form({ onResult }: FormProps) {
     setValue(event.target.value);
   }
 
-  const { mutate, isPending } = useDecodeVin();
+  const { mutate } = useDecodeVin();
 
   function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     const validationError = validateVin(value);
-
-    if (isPending) return <p>Завантаження...</p>;
 
     if (validationError) {
       setError(validationError);

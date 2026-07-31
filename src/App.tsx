@@ -7,11 +7,7 @@ import NavLayout from "./components/NavLayout/NavLayout";
 import { Route, Routes } from "react-router";
 
 import "./App.css";
-import {
-  QueryClient,
-  QueryClientProvider,
-  // useQuery,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 

@@ -5,9 +5,10 @@ import { type VehicleVariable } from "../../types/vinServices";
 // import styles from "./VariablesListPage.module.css";
 
 function VariablesList() {
-  const { data, isLoading } = useVariablesList();
+  const { data, isLoading, isError } = useVariablesList();
 
   if (isLoading) return <p>Завантаження...</p>;
+  if (isError) return <p>Помилка Завантаження!</p>;
 
   return (
     <ul>

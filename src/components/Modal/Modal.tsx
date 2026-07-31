@@ -38,7 +38,7 @@ function Modal({ children, close }: ModalProps) {
     >
       <div className={styles.modal}>{children}</div>
     </div>,
-    document.getElementById("modal-root") as HTMLDivElement,
+    document.getElementById("root") as HTMLDivElement,
   );
 }
 

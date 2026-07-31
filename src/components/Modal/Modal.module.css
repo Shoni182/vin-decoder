@@ -10,7 +10,9 @@
 }
 
 .modal {
-    background: #fff;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-h);
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     max-width: 420px;

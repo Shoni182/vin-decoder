@@ -9,9 +9,12 @@
 
 .historyButton {
     padding: 0.25rem 0.75rem;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 999px;
-    background: #fff;
+
+    background: var(--code-bg);
+    border-color: var(--border);
+    color: var(--text-h);
 }
 
 .results {
@@ -27,7 +30,8 @@
     justify-content: space-between;
     gap: 1rem;
     padding: 0.5rem 0.75rem;
-    border: 1px solid #eee;
+    border: 1px solid;
     border-radius: 6px;
     flex-wrap: wrap;
+    border-color: var(--border)
 }

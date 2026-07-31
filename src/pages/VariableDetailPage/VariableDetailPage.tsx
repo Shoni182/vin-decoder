@@ -4,6 +4,10 @@ import { useParams } from "react-router";
 import { useVariablesList } from "../../hooks/useVinDecoder";
 import type { VehicleVariable } from "../../types/vinServices";
 
+function stripHtml(value: string): string {
+  return value.replace(/<[^>]+>/g, "");
+}
+
 function VariableDetail() {
   const { variableId } = useParams();
 
@@ -18,8 +22,8 @@ function VariableDetail() {
 
   return (
     <div>
-      <h1>{variable.Name}</h1>
-      <p>{variable.Description}</p>
+      <h3>{variable.Name}</h3>
+      <p>{stripHtml(variable.Description)}</p>
     </div>
   );
 }
