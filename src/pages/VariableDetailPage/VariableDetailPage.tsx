@@ -1,19 +1,24 @@
-// import styles from "./VariableDetailPage.module.css";
+import css from "./VariableDetailPage.module.css";
 
 import { useParams } from "react-router";
 import { useVariablesList } from "../../hooks/useVinDecoder";
 import type { VehicleVariable } from "../../types/vinServices";
 
 function stripHtml(value: string): string {
-  return value.replace(/<[^>]+>/g, "");
+  return (
+    new DOMParser().parseFromString(value, "text/html").body.textContent ?? ""
+  );
 }
 
 function VariableDetail() {
   const { variableId } = useParams();
+  // console.log(typeof variableId);
+  const numericId = Number(variableId);
 
   const { data, isLoading, isError } = useVariablesList();
+
   const variable = data?.Results.find(
-    (v: VehicleVariable) => String(v.ID) === variableId,
+    (v: VehicleVariable) => v.ID === numericId,
   );
 
   if (isLoading) return <p>Завантаження...</p>;
@@ -23,7 +28,7 @@ function VariableDetail() {
   return (
     <div>
       <h3>{variable.Name}</h3>
-      <p>{stripHtml(variable.Description)}</p>
+      <p className={css.detail}>{stripHtml(variable.Description)}</p>
     </div>
   );
 }

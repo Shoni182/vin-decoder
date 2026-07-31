@@ -1,9 +1,11 @@
-import css from "./HomePage.module.css";
 import { useState } from "react";
-import Form from "../../components/Form/Form";
 import { useVinHistory } from "../../hooks/useVinHistory";
+import css from "./HomePage.module.css";
+import Form from "../../components/Form/Form";
+//: Імпорт типів
 import type { DecodeVinResult } from "../../types/vinServices";
 
+//: Компонент голоівної сторінки
 function HomePage() {
   const { history, addToHistory } = useVinHistory();
   const [results, setResults] = useState<DecodeVinResult[] | null>(null);
@@ -14,7 +16,7 @@ function HomePage() {
   }
 
   function handleHistoryClick(entry: (typeof history)[number]) {
-    setResults(entry.results); // без повторного запиту
+    setResults(entry.results);
   }
 
   return (
@@ -26,6 +28,7 @@ function HomePage() {
       {history.length > 0 && (
         <div>
           <h3>List of last 3 VIN codes</h3>
+
           <ul className={css.history}>
             {history.map((entry) => (
               <li key={entry.timestamp}>
