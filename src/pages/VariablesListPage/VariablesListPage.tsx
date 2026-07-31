@@ -2,7 +2,7 @@ import { useVariablesList } from "../../hooks/useVinDecoder";
 import { Link } from "react-router";
 import { type VehicleVariable } from "../../types/vinServices";
 
-// import styles from "./VariablesListPage.module.css";
+import css from "./VariablesListPage.module.css";
 
 function VariablesList() {
   const { data, isLoading, isError } = useVariablesList();
@@ -11,11 +11,13 @@ function VariablesList() {
   if (isError) return <p>Помилка Завантаження!</p>;
 
   return (
-    <ul>
+    <ul className={css.list}>
       {data.Results.map((v: VehicleVariable) => (
         <li key={v.ID}>
           {" "}
-          <Link to={`/variables/${v.ID}`}>{v.Name}</Link>
+          <Link className={css.item} to={`/variables/${v.ID}`}>
+            {v.Name}
+          </Link>
         </li>
       ))}
     </ul>

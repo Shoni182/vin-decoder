@@ -6,11 +6,11 @@
     margin-top: 1rem;
 }
 
-.item a {
+.item {
     color: #2563eb;
     text-decoration: none;
 }
 
-.item a:hover {
+.item:hover {
     text-decoration: underline;
 }
